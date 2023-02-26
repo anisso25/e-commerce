@@ -77,7 +77,7 @@ class ProduitController extends Controller
                     $produits->uuid = time();
                     $produits->product_name = $request->input('product_name');
                     $produits->product_title = $request->input('product_title');
-                    $produits->prix = $request->input('prix');
+                    $produits->prix = str_replace(' ','', $request->input('prix'));
                     $produits->discription_p = $request->input('discription_p');
                     $produits->status = 1;
                     $produits->product_sp = 0;
@@ -132,7 +132,7 @@ class ProduitController extends Controller
                 $produits->product_title = $request->input('product_title');
                 $produits->product_name = $request->input('product_name');
 
-                $produits->prix = $request->input('prix');
+                $produits->prix = str_replace(' ','', $request->input('prix'));
                 $produits->discription_p = $request->input('discription_p');
                 $produits->status = 1;
 
